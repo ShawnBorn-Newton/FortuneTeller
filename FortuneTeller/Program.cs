@@ -14,10 +14,12 @@ namespace FortuneTeller
             string nameFirst;
             string nameLast;
             string responseColor;
-            int    responseAge;
+            int responseAge;
+            int responseMonth;
             double responseKin;
 
-            int retYears;
+            int    retEven;
+            int    retOdd;
             string localZero;
             string localOne;
             string localTwo;
@@ -33,18 +35,25 @@ namespace FortuneTeller
             string indCar;
             string vioCar;
 
+            int someCash;
+            int moreCash;
+            int bestCash;
+            string failCash;
+
             Console.WriteLine(" Welcome, let us peer through the currtens of fate!\n We shall explore your future useing special aspects of your life.");
 
             Console.WriteLine(" To begine we must look at your name.\n Names are powerfull forces that shape fate and are shaped in turn.\n What is your first name?");
-                nameFirst = Console.ReadLine();
+            nameFirst = Console.ReadLine();
             Console.WriteLine(" And your last name?");
-                nameLast = Console.ReadLine();
-            Console.WriteLine(" We must know how long you have tred your current path.\n How old are you?");
-                responseAge = int.Parse(Console.ReadLine());
-            Console.WriteLine("Color \"Help\"" );
-                responseColor = Console.ReadLine();
+            nameLast = Console.ReadLine();
+            Console.WriteLine(" How old are you?");
+            responseAge = int.Parse(Console.ReadLine());
+            Console.WriteLine(" We must know the turning of your star sighn.\n Give the number of your birth month.");
+            responseMonth = int.Parse(Console.ReadLine());
+            Console.WriteLine("Color \"Help\"");
+            responseColor = Console.ReadLine();
             Console.WriteLine("Siblings");
-                responseKin = double.Parse(Console.ReadLine());
+            responseKin = double.Parse(Console.ReadLine());
 
             switch (responseColor)
             {
@@ -70,7 +79,14 @@ namespace FortuneTeller
 
                     break;
             }
-
+            if (responseAge % 2 == 0)
+            {
+                responseAge = retEven;
+            }
+            else
+            {
+                responseAge = retOdd;
+            }
             //use vars to put together fortune
 
 
