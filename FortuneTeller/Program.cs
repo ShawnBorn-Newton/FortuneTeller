@@ -20,25 +20,25 @@ namespace FortuneTeller
 
             int    retEven;
             int    retOdd;
-            string localZero;
-            string localOne;
-            string localTwo;
-            string localThree;
-            string localMost;
-            string localFail;
+            string localZero = "in New Zealand";
+            string localOne = "in Hawaii";
+            string localTwo = "in Japan";
+            string localThree = "in New York";
+            string localMost = " on Mars";
+            string localFail = " in a back ally";
 
-            string redCar;
-            string oraCar;
-            string yelCar;
-            string greCar;
-            string bluCar;
-            string indCar;
-            string vioCar;
+            string redCar = "a Jetta";
+            string oraCar = "a jet pack";
+            string yelCar = "a tour bus";
+            string greCar = "a submarine";
+            string bluCar = " a privet jet";
+            string indCar = "a roman charriet";
+            string vioCar = "a dog sled";
 
-            int someCash;
-            int moreCash;
-            int bestCash;
-            string failCash;
+            int someCash = 25000;
+            int moreCash = 50000;
+            int bestCash = 750000;
+            int failCash = 5;
             //Input
             Console.WriteLine(" Welcome, let us peer through the currtens of fate!\n We shall explore your future useing special aspects of your life.");
 
@@ -50,37 +50,44 @@ namespace FortuneTeller
             responseAge = int.Parse(Console.ReadLine());
             Console.WriteLine(" We must know the turning of your star sighn.\n Give the number of your birth month.");
             responseMonth = int.Parse(Console.ReadLine());
-            Console.WriteLine("Color \"Help\"");
+            Console.WriteLine(" Your preferances shape you destiny as well.\n What is you favorite ROYGBIV color? If you are unfamilur with ROYGBIV type \"Help\"");
             responseColor = Console.ReadLine();
-            Console.WriteLine("Siblings");
+            Console.WriteLine(" Lastly, how many siblings do you have?");
             responseKin = double.Parse(Console.ReadLine());
            
             //color
-            switch (responseColor)
-            {
-                case "red":
-                    responseColor = redCar;
-                    break;
-                case "orange":
-                    responseColor = oraCar;
-                    break;
-                case "yellow":
-                    responseColor = yelCar;
-                    break;
-                case "Green":
-                    responseColor = greCar;
-                    break;
-                case "blue":
-                    responseColor = bluCar;
-                    break;
-                case "indigo":
-                    responseColor = indCar;
-                    break;
-                case "violet":
-                    responseColor = vioCar;
-                    break;
-                case "help":
+            switch(responseColor)
+            { case "help":
                     Console.WriteLine("ROYGBIV stands for Red, Orange, Green, Blue, Indigo, and Violet. These are your choises from the fates.");
+            break;
+                default:
+
+                    switch (responseColor)
+                    {
+
+                        case "red":
+                            responseColor = redCar;
+                            break;
+                        case "orange":
+                            responseColor = oraCar;
+                            break;
+                        case "yellow":
+                            responseColor = yelCar;
+                            break;
+                        case "Green":
+                            responseColor = greCar;
+                            break;
+                        case "blue":
+                            responseColor = bluCar;
+                            break;
+                        case "indigo":
+                            responseColor = indCar;
+                            break;
+                        case "violet":
+                            responseColor = vioCar;
+                            break;
+                        
+                    }
                     break;
             }
             //age
@@ -95,27 +102,27 @@ namespace FortuneTeller
 
             if(responseKin == 0)
             {
-                responseKin = localZero;
+                responseKin = double.Parse(localZero);
             }
             else if(responseKin == 1)
             {
-                responseKin = localOne;
+                responseKin = double.Parse(localOne);
             }
             else if(responseKin == 2)
             {
-                responseKin = localTwo;
+                responseKin = double.Parse(localTwo);
             }
             else if(responseKin ==3)
             {
-                responseKin = localThree;
+                responseKin = double.Parse(localThree);
             }
             else if(responseKin > 3)
             {
-                responseKin = localMost;
+                responseKin = double.Parse(localMost);
             }
             else
             {
-                responseKin = localFail;
+                responseKin = double.Parse(localFail);
             }
             //birth month
             if (responseMonth > 1 && responseMonth < 4)
@@ -134,10 +141,11 @@ namespace FortuneTeller
             {
                 responseMonth = failCash;
             }
+            
 
             //print fortune
 
-            Console.WriteLine(nameFirst + nameLast + responseAge + responseMonth + responseKin + responseColor);
+            Console.WriteLine(nameFirst + " " + nameLast+ " will reire in " + responseAge + " with " + responseMonth + " in the bank. a vacation home in" +  responseKin + " and a " + "\n"  + responseColor);
 
 
 
