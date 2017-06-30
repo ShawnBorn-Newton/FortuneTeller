@@ -13,29 +13,17 @@ namespace FortuneTeller
             //variables
             string nameFirst;
             string nameLast;
-            string responseColor;
-            int responseAge;
-            int responseMonth;
-            double responseKin;
+            string color;
+            int age;
+            int birthMonth;
+            double siblings;
 
-            int retEven = 10;
-            int retOdd = 40;
+            int retirmantYears;
             string vacationHome = "";
-            
-
-            string redCar = "a Jetta";
-            string oraCar = "a jet pack";
-            string yelCar = "a tour bus";
-            string greCar = "a submarine";
-            string bluCar = " a privet jet";
-            string indCar = "a roman charriet";
-            string vioCar = "a dog sled";
-
-            int someCash = 25000;
-            int moreCash = 50000;
-            int bestCash = 750000;
-            int failCash = 5;
-            //Input
+            string transportation = "";
+            int bankMoney;
+           
+                //Input
             Console.WriteLine(" Welcome, let us peer through the currtens of fate!\n We shall explore your future useing special aspects of your life.");
 
             Console.WriteLine(" To begine we must look at your name.\n Names are powerfull forces that shape fate and are shaped in turn.\n What is your first name?");
@@ -43,80 +31,78 @@ namespace FortuneTeller
             Console.WriteLine(" And your last name?");
             nameLast = Console.ReadLine();
             Console.WriteLine(" How old are you?");
-            responseAge = int.Parse(Console.ReadLine());
+            age = int.Parse(Console.ReadLine());
             Console.WriteLine(" We must know the turning of your star sighn.\n Give the number of your birth month.");
-            responseMonth = int.Parse(Console.ReadLine());
+            birthMonth = int.Parse(Console.ReadLine());
             Console.WriteLine(" Your preferances shape you destiny as well.\n What is you favorite ROYGBIV color? If you are unfamilur with ROYGBIV type \"Help\"");
-            responseColor = Console.ReadLine();
+            color = Console.ReadLine();
             Console.WriteLine(" Lastly, how many siblings do you have?");
-            responseKin = double.Parse(Console.ReadLine());
+            siblings = double.Parse(Console.ReadLine());
 
             //color
-            switch (responseColor)
+            switch (color)
             {
                 case "help":
                     Console.WriteLine("ROYGBIV stands for Red, Orange, Green, Blue, Indigo, and Violet. These are your choises from the fates.");
                     break;
                 default:
 
-                    switch (responseColor)
+                    switch (color)
                     {
 
                         case "red":
-                            responseColor = redCar;
+                            transportation = "a nice car";
                             break;
                         case "orange":
-                            responseColor = oraCar;
+                            transportation = "a jet pack";
                             break;
                         case "yellow":
-                            responseColor = yelCar;
+                            transportation = "a submarine";
                             break;
                         case "Green":
-                            responseColor = greCar;
+                            transportation = "a rickshaw";
                             break;
                         case "blue":
-                            responseColor = bluCar;
+                            transportation = "a work van";
                             break;
                         case "indigo":
-                            responseColor = indCar;
+                            transportation = "a private jet";
                             break;
                         case "violet":
-                            responseColor = vioCar;
+                            transportation = "a roman charriet";
                             break;
 
                     }
                     break;
             }
-            Console.WriteLine(responseColor);
-
 
             //age
-            if (responseAge % 2 == 0)
+            if (age % 2 == 0)
             {
-                responseAge = retEven;
+                retirmantYears = 10;
             }
             else
             {
-                responseAge = retOdd;
+                retirmantYears = 40;
             }
-
-            if (responseKin == 0d)
+            //siblings
+            if (siblings == 0d)
             {
                 vacationHome = "Japan";
             }
-            else if (responseKin == 1d)
+            else if (siblings == 1d)
             {
                 vacationHome = "New Zealand";
             }
-            else if (responseKin == 2d)
+            else if (siblings == 2d)
             {
                 vacationHome = "Hawaii";
             }
-            else if (responseKin == 3d)
+            else if (siblings == 3d)
             {
                 vacationHome = "New York";
             }
-            else if (responseKin > 3d)
+            else if (siblings > 3d)
             {
                 vacationHome = "Florida";
             }
@@ -125,28 +111,28 @@ namespace FortuneTeller
                 vacationHome = "a back ally";
             }
             //birth month
-            if (responseMonth > 1 && responseMonth <= 4)
+            if (birthMonth > 1 && birthMonth <= 4)
             {
-                responseMonth = someCash;
+                bankMoney = 10000;
             }
-            else if (responseMonth > 5 && responseMonth <= 8)
+            else if (birthMonth > 5 && birthMonth <= 8)
             {
-                responseMonth = moreCash;
+                bankMoney = 10000;
             }
-            else if (responseMonth > 9 && responseMonth <= 12)
+            else if (birthMonth > 9 && birthMonth <= 12)
             {
-                responseMonth = bestCash;
+                bankMoney = 200000;
             }
             else
             {
-                responseMonth = failCash;
+                bankMoney = 5;
             }
 
 
             //print fortune
 
-            Console.WriteLine(nameFirst + " " + nameLast + " will reire in " + responseAge + " with " 
-                + responseMonth + " in the bank. a vacation home in" + responseKin + " and a \n" + responseColor);
+            Console.WriteLine(nameFirst + " " + nameLast + " will retire in " + retirmantYears + " with $" 
+                + bankMoney + " in the bank. a vacation home in" + vacationHome + " and a \n" + transportation);
 
 
 
