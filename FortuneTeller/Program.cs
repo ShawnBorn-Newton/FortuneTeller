@@ -10,7 +10,7 @@ namespace FortuneTeller
     {
         static void Main(string[] args)
         {
-            //User Input and creat vars
+            //variables
             string nameFirst;
             string nameLast;
             string responseColor;
@@ -39,7 +39,7 @@ namespace FortuneTeller
             int moreCash;
             int bestCash;
             string failCash;
-
+            //Input
             Console.WriteLine(" Welcome, let us peer through the currtens of fate!\n We shall explore your future useing special aspects of your life.");
 
             Console.WriteLine(" To begine we must look at your name.\n Names are powerfull forces that shape fate and are shaped in turn.\n What is your first name?");
@@ -54,31 +54,36 @@ namespace FortuneTeller
             responseColor = Console.ReadLine();
             Console.WriteLine("Siblings");
             responseKin = double.Parse(Console.ReadLine());
-
+           
+            //color
             switch (responseColor)
             {
                 case "red":
-
+                    responseColor = redCar;
                     break;
                 case "orange":
-
+                    responseColor = oraCar;
                     break;
                 case "yellow":
-
+                    responseColor = yelCar;
                     break;
                 case "Green":
-
+                    responseColor = greCar;
                     break;
                 case "blue":
-
+                    responseColor = bluCar;
                     break;
                 case "indigo":
-
+                    responseColor = indCar;
                     break;
                 case "violet":
-
+                    responseColor = vioCar;
+                    break;
+                case "help":
+                    Console.WriteLine("ROYGBIV stands for Red, Orange, Green, Blue, Indigo, and Violet. These are your choises from the fates.");
                     break;
             }
+            //age
             if (responseAge % 2 == 0)
             {
                 responseAge = retEven;
@@ -112,7 +117,7 @@ namespace FortuneTeller
             {
                 responseKin = localFail;
             }
-
+            //birth month
             if (responseMonth > 1 && responseMonth < 4)
             {
                 responseMonth = someCash;
@@ -129,10 +134,13 @@ namespace FortuneTeller
             {
                 responseMonth = failCash;
             }
-            //use vars to put together fortune
-
 
             //print fortune
+
+            Console.WriteLine(nameFirst + nameLast + responseAge + responseMonth + responseKin + responseColor);
+
+
+
         }
     }
 }
