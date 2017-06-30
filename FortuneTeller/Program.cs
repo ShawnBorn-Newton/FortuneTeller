@@ -18,14 +18,10 @@ namespace FortuneTeller
             int responseMonth;
             double responseKin;
 
-            int    retEven;
-            int    retOdd;
-            string localZero = "in New Zealand";
-            string localOne = "in Hawaii";
-            string localTwo = "in Japan";
-            string localThree = "in New York";
-            string localMost = " on Mars";
-            string localFail = " in a back ally";
+            int retEven = 10;
+            int retOdd = 40;
+            string vacationHome = "";
+            
 
             string redCar = "a Jetta";
             string oraCar = "a jet pack";
@@ -54,12 +50,13 @@ namespace FortuneTeller
             responseColor = Console.ReadLine();
             Console.WriteLine(" Lastly, how many siblings do you have?");
             responseKin = double.Parse(Console.ReadLine());
-           
+
             //color
-            switch(responseColor)
-            { case "help":
+            switch (responseColor)
+            {
+                case "help":
                     Console.WriteLine("ROYGBIV stands for Red, Orange, Green, Blue, Indigo, and Violet. These are your choises from the fates.");
-            break;
+                    break;
                 default:
 
                     switch (responseColor)
@@ -86,10 +83,13 @@ namespace FortuneTeller
                         case "violet":
                             responseColor = vioCar;
                             break;
-                        
+
                     }
                     break;
             }
+            Console.WriteLine(responseColor);
+
+
             //age
             if (responseAge % 2 == 0)
             {
@@ -100,40 +100,40 @@ namespace FortuneTeller
                 responseAge = retOdd;
             }
 
-            if(responseKin == 0)
+            if (responseKin == 0d)
             {
-                responseKin = double.Parse(localZero);
+                vacationHome = "Japan";
             }
-            else if(responseKin == 1)
+            else if (responseKin == 1d)
             {
-                responseKin = double.Parse(localOne);
+                vacationHome = "New Zealand";
             }
-            else if(responseKin == 2)
+            else if (responseKin == 2d)
             {
-                responseKin = double.Parse(localTwo);
+                vacationHome = "Hawaii";
             }
-            else if(responseKin ==3)
+            else if (responseKin == 3d)
             {
-                responseKin = double.Parse(localThree);
+                vacationHome = "New York";
             }
-            else if(responseKin > 3)
+            else if (responseKin > 3d)
             {
-                responseKin = double.Parse(localMost);
+                vacationHome = "Florida";
             }
             else
             {
-                responseKin = double.Parse(localFail);
+                vacationHome = "a back ally";
             }
             //birth month
-            if (responseMonth > 1 && responseMonth < 4)
+            if (responseMonth > 1 && responseMonth <= 4)
             {
                 responseMonth = someCash;
             }
-            else if (responseMonth > 5 && responseMonth < 8)
+            else if (responseMonth > 5 && responseMonth <= 8)
             {
                 responseMonth = moreCash;
             }
-            else if (responseMonth > 9 && responseMonth < 12)
+            else if (responseMonth > 9 && responseMonth <= 12)
             {
                 responseMonth = bestCash;
             }
@@ -141,11 +141,12 @@ namespace FortuneTeller
             {
                 responseMonth = failCash;
             }
-            
+
 
             //print fortune
 
-            Console.WriteLine(nameFirst + " " + nameLast+ " will reire in " + responseAge + " with " + responseMonth + " in the bank. a vacation home in" +  responseKin + " and a " + "\n"  + responseColor);
+            Console.WriteLine(nameFirst + " " + nameLast + " will reire in " + responseAge + " with " 
+                + responseMonth + " in the bank. a vacation home in" + responseKin + " and a \n" + responseColor);
 
 
 
