@@ -87,6 +87,48 @@ namespace FortuneTeller
             {
                 responseAge = retOdd;
             }
+
+            if(responseKin == 0)
+            {
+                responseKin = localZero;
+            }
+            else if(responseKin == 1)
+            {
+                responseKin = localOne;
+            }
+            else if(responseKin == 2)
+            {
+                responseKin = localTwo;
+            }
+            else if(responseKin ==3)
+            {
+                responseKin = localThree;
+            }
+            else if(responseKin > 3)
+            {
+                responseKin = localMost;
+            }
+            else
+            {
+                responseKin = localFail;
+            }
+
+            if (responseMonth > 1 && responseMonth < 4)
+            {
+                responseMonth = someCash;
+            }
+            else if (responseMonth > 5 && responseMonth < 8)
+            {
+                responseMonth = moreCash;
+            }
+            else if (responseMonth > 9 && responseMonth < 12)
+            {
+                responseMonth = bestCash;
+            }
+            else
+            {
+                responseMonth = failCash;
+            }
             //use vars to put together fortune
 
 
