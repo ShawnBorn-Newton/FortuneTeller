@@ -17,6 +17,22 @@ namespace FortuneTeller
             int    responseAge;
             double responseKin;
 
+            int retYears;
+            string localZero;
+            string localOne;
+            string localTwo;
+            string localThree;
+            string localMost;
+            string localFail;
+
+            string redCar;
+            string oraCar;
+            string yelCar;
+            string greCar;
+            string bluCar;
+            string indCar;
+            string vioCar;
+
             Console.WriteLine(" Welcome, let us peer through the currtens of fate!\n We shall explore your future useing special aspects of your life.");
 
             Console.WriteLine(" To begine we must look at your name.\n Names are powerfull forces that shape fate and are shaped in turn.\n What is your first name?");
