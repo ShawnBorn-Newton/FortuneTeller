@@ -18,15 +18,15 @@ namespace FortuneTeller
             int birthMonth;
             double siblings;
 
-            int retirmantYears; //age
+            int retiremantYears; //age
             string vacationHome = ""; //siblings
             string transportation = ""; //color
             int bankMoney; //birthMonth
            
                 //Greating
-            Console.WriteLine(" Welcome, let us peer through the currtens of fate!\n We shall explore your future useing special aspects of your life.");
+            Console.WriteLine(" Welcome, let us peer through the curtains of fate!\n We shall explore your future useing special aspects of your life.");
                 //Input
-            Console.WriteLine(" To begine we must look at your name.\n Names are powerfull forces that shape fate and are shaped in turn.\n What is your first name?");
+            Console.WriteLine(" To begin we must look at your name.\n Names are powerful forces that shape fate and are shaped in turn.\n What is your first name?");
             nameFirst = Console.ReadLine();
             Console.WriteLine(" And your last name?");
             nameLast = Console.ReadLine();
@@ -34,18 +34,15 @@ namespace FortuneTeller
             age = int.Parse(Console.ReadLine());
             Console.WriteLine(" We must know the turning of your star sighn.\n Give the number of your birth month.");
             birthMonth = int.Parse(Console.ReadLine());
-            Console.WriteLine(" Your preferances shape you destiny as well.\n What is you favorite ROYGBIV color? If you are unfamilur with ROYGBIV type\n \"Help\"");
+            Console.WriteLine(" Your preferences shape your destiny as well.\n What is you favorite ROYGBIV color? If you are unfamilur with ROYGBIV type\n \"Help\"");
             color = Console.ReadLine().ToLower();
            
 
-            //color
-
-            //while 
-
+            //color nested switch
             switch (color)
             {
                 case "help":
-                    Console.WriteLine("ROYGBIV stands for Red, Orange, Green, Blue, Indigo, and Violet. These are your choises from the fates.\n"
+                    Console.WriteLine("ROYGBIV stands for Red, Orange, Green, Blue, Indigo, and Violet. These are your choices from the fates.\n"
                         + "Please enter one now.");
                     color = Console.ReadLine().ToLower();
                     break;
@@ -73,23 +70,23 @@ namespace FortuneTeller
                             transportation = "a private jet";
                             break;
                         case "violet":
-                            transportation = "a roman charriet";
+                            transportation = "a roman chariot";
                             break;
 
-                    }
-                    break;
-            }
+                     }
+                      break;
+                }
 
-                    //age
+                    //age if
                     if (age % 2 == 0)
                     {
-                        retirmantYears = 10;
+                        retiremantYears = 10;
                     }
                     else
                     {
-                        retirmantYears = 40;
+                        retiremantYears = 40;
                     }
-            //siblings
+            //siblings if else
             Console.WriteLine(" Lastly, how many siblings do you have?");
             siblings = double.Parse(Console.ReadLine());
 
@@ -117,7 +114,7 @@ namespace FortuneTeller
                     {
                         vacationHome = "a back ally";
                     }
-                    //birth month
+                    //birth month if else
                     if (birthMonth > 1 && birthMonth <= 4)
                     {
                         bankMoney = 10000;
@@ -138,8 +135,8 @@ namespace FortuneTeller
 
             //print fortune
 
-            Console.WriteLine(nameFirst + " " + nameLast + " will retire in " + retirmantYears + " years with $" 
-                + bankMoney + " in the bank. a vacation home in" + vacationHome + " and a \n" + transportation);
+            Console.WriteLine(nameFirst + " " + nameLast + " will retire in " + retiremantYears + " years with $" 
+                + bankMoney.ToString("N0") + " in the bank. a vacation home in\n" + vacationHome + " and a"  + transportation);
 
 
 
