@@ -10,36 +10,22 @@ namespace FortuneTeller
     {
         static void Main(string[] args)
         {
-            //variables
-            string nameFirst;
-            string nameLast;
-            string color;
-            int age;
-            int birthMonth;
-            double siblings;
-
-            //age
-            int retiremantYears;
-            //siblings
+            //siblings, needed to convert double siblings into string. should this be here or with statment? 
             string vacationHome = "";
-            //color
-            string transportation = "";
-            //birthMonth 
-            int bankMoney; 
            
                 //Greating
             Console.WriteLine(" Welcome, let us peer through the curtains of fate!\n We shall explore your future using special aspects of your life.");
                 //Input
             Console.WriteLine(" To begin we must look at your name.\n Names are powerful forces that shape fate and are shaped in turn.\n What is your first name?");
-                nameFirst = Console.ReadLine();
+                string nameFirst = Console.ReadLine();
             Console.WriteLine(" And your last name?");
-                nameLast = Console.ReadLine();
+                string nameLast = Console.ReadLine();
             Console.WriteLine(" How old are you?");
-                age = int.Parse(Console.ReadLine());
+                int age = int.Parse(Console.ReadLine());
             Console.WriteLine(" We must know the turning of your star sign.\n Give the number of your birth month.");
-                birthMonth = int.Parse(Console.ReadLine());
+                int birthMonth = int.Parse(Console.ReadLine());
             Console.WriteLine(" Your preferences shape your destiny as well.\n What is you favorite ROYGBIV color? If you are unfamilur with ROYGBIV type\n \"Help\"");
-                color = Console.ReadLine().ToLower();
+                string color = Console.ReadLine().ToLower();
            
 
             //color nested switch
@@ -55,28 +41,28 @@ namespace FortuneTeller
                     switch (color)
                     {
                         case "red":
-                            transportation = "a nice car.";
+                            color = "a nice car.";
                             break;
                         case "orange":
-                            transportation = "a jet pack.";
+                            color = "a jet pack.";
                             break;
                         case "yellow":
-                            transportation = "a submarine";
+                            color = "a submarine";
                             break;
                         case "Green":
-                            transportation = "a rickshaw.";
+                            color = "a rickshaw.";
                             break;
                         case "blue":
-                            transportation = "a work van.";
+                            color = "a work van.";
                             break;
                         case "indigo":
-                            transportation = "a private jet.";
+                            color = "a private jet.";
                             break;
                         case "violet":
-                            transportation = "a roman chariot.";
+                            color = "a roman chariot.";
                             break;
                         default:                            
-                            transportation = "a hover board.";
+                            color = "a hover board.";
                             break;                           
                      }
                       break;
@@ -85,21 +71,21 @@ namespace FortuneTeller
                 //age if
             if (age % 2 == 0)
                 {
-                    retiremantYears = 10;
+                    age = 10;
                 }
             else
                 {
-                    retiremantYears = 40;
+                    age = 40;
                 }
-            //siblings if else
+            //siblings if else (I had to put the write and read lines here to make this happen in the correct order.) 
             Console.WriteLine(" Lastly, how many siblings do you have?");
-            siblings = double.Parse(Console.ReadLine());
+            double siblings = double.Parse(Console.ReadLine());
 
-            if (siblings == 0d)
+            if (siblings == 0)
                 {
                     vacationHome = "Japan";
                 }
-            else if (siblings == 1d)
+            else if (siblings == 1)
                 {
                     vacationHome = "New Zealand";
                 }
@@ -122,26 +108,26 @@ namespace FortuneTeller
             //birth month if else
             if (birthMonth >= 1 && birthMonth <= 4)
                 {
-                    bankMoney = 10000;
+                    birthMonth = 10000;
                 }
             else if (birthMonth >= 5 && birthMonth <= 8)
                 {
-                    bankMoney = 10000;
+                    birthMonth = 15000;
                 }
             else if (birthMonth >= 9 && birthMonth <= 12)
                 {
-                    bankMoney = 200000;
+                    birthMonth = 200000;
                 }
             else
                 {
-                    bankMoney = 5;
+                    birthMonth = 5;
                 }
             
 
             //print fortune (ding)
 
-            Console.WriteLine(nameFirst + " " + nameLast + " will retire in " + retiremantYears + " years with $" 
-                + bankMoney.ToString("N0") + " in the bank,\n a vacation home in " + vacationHome + " and\a " + transportation);
+            Console.WriteLine(nameFirst + " " + nameLast + " will retire in " + age + " years with $" 
+                + birthMonth.ToString("N0") + " in the bank,\n a vacation home in " + vacationHome + " and\a " + color);
 
 
 
